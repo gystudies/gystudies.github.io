@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>IO与网络编程 | 个人博客</title>
+  <title>session与cookie | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面试题引入  题目：使用递归算法输出某个目录下及其子目录下所有文件？">
+  <meta name="description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IO与网络编程">
-<meta property="og:url" content="http://yoursite.com/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:title" content="session与cookie">
+<meta property="og:url" content="http://yoursite.com/2020/04/24/session%E4%B8%8Ecookie/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="面试题引入  题目：使用递归算法输出某个目录下及其子目录下所有文件？">
+<meta property="og:description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/stream1.webp">
-<meta property="og:image" content="http://yoursite.com/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/stream2.webp">
-<meta property="article:published_time" content="2020-04-22T07:47:08.000Z">
-<meta property="article:modified_time" content="2020-04-22T15:48:29.888Z">
+<meta property="article:published_time" content="2020-04-24T07:43:42.000Z">
+<meta property="article:modified_time" content="2020-04-24T09:27:19.481Z">
 <meta property="article:author" content="gystudies">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/stream1.webp">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -175,20 +172,20 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-网络编程" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-session与cookie" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      IO与网络编程
+      session与cookie
     </h1>
   
 
         
-        <a href="/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-04-22T07:47:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+        <a href="/2020/04/24/session%E4%B8%8Ecookie/" class="archive-article-date">
+  	<time datetime="2020-04-24T07:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
 </a>
         
       </header>
@@ -196,70 +193,48 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>面试题引入</p>
+<p>会话跟踪</p>
 </blockquote>
-<p>题目：使用递归算法输出某个目录下及其子目录下所有文件？</p>
+<p><strong>会话</strong>，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。</p>
+<p>由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话；</p>
+<p>常用的<strong>会话跟踪技术</strong>是Cookie与Session：</p>
+<ul>
+<li>Cookie通过在客户端记录信息确定用户身份；</li>
+<li>Session通过在服务器端记录信息确定用户身份；</li>
+</ul>
 <a id="more"></a>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String path)</span></span>&#123;</span><br><span class="line">    File file = <span class="keyword">new</span> File(path);</span><br><span class="line">    File[] fs= file.listFiles();<span class="comment">// path下的路径名数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (fs==<span class="keyword">null</span>)<span class="keyword">return</span>;<span class="comment">// 出口</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(File f:fs)&#123;</span><br><span class="line">        <span class="keyword">if</span> (f.isFile()) System.out.println(f.getPath());</span><br><span class="line">        <span class="keyword">else</span> print(f.getPath());<span class="comment">//getpath():将此FiLe转换为路径名字符串,使用构造方法传递的路径</span></span><br><span class="line">    &#125;							<span class="comment">//getAbsolutePath():返回此File的绝对路径名字符串</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    print(<span class="string">"F:\\ssm\\apache-maven-3.6.3"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">3</span>];</span><br><span class="line">Arrays.toString(bytes); 		<span class="comment">//字节数组转String</span></span><br><span class="line"><span class="keyword">byte</span>[] bytes = <span class="string">"你好"</span>.getBytes();<span class="comment">//String转字节数组</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong>数据流</strong>是一组有序，有起点和终点的字节的数据序列。包括输入流和输出流。</p>
-<p>Java中的流亦可分为两种： </p>
-<p><strong>1) 字节流：</strong>数据流中最小的数据单元是<strong>字节</strong> </p>
-<p><strong>2) 字符流：</strong>数据流中最小的数据单元是<strong>字符</strong>， Java中的字符是Unicode编码，<strong>一个字符占用两个字节</strong>。</p>
-<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><p>相对于内存而言：<code>内存 &lt;i-----o&gt; 硬盘</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DataOutputStream out = <span class="keyword">new</span> DataOutputStream(</span><br><span class="line">                    <span class="keyword">new</span> BufferedOutputStream(</span><br><span class="line">                    <span class="keyword">new</span> FileOutputStream(file)));</span><br></pre></td></tr></table></figure>
-
-<p>从上面的代码块中大家不难看出这些类的关系：为了向文件中写入数据，首先需要创建一个FileOutputStream，然后为了提升访问的效率，所以将它发送给具备缓存功能的BufferedOutputStream,而为了实现与机器类型无关的java基本类型数据的输出，所以，我们将缓存的流传递给了DataOutputStream。从上面的关系，我们可以看到，其根本目的都是为outputSteam添加额外的功能。而这种<strong>额外功能的添加就是采用了装饰模式来构建</strong>的代码。因此，学习流，必须要学好装饰模式。</p>
-<p><img src="/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/stream1.webp" alt="stream1.webp"></p>
-<h4 id="文件流-File"><a href="#文件流-File" class="headerlink" title="文件流 File -"></a>文件流 File -</h4><p>抽象类</p>
-<h5 id="FileOutputStream-文件字节输出流"><a href="#FileOutputStream-文件字节输出流" class="headerlink" title="FileOutputStream 文件字节输出流"></a>FileOutputStream 文件字节输出流</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream fos =<span class="keyword">new</span> FileOutputStream(<span class="string">"F:\\IdeaProjects\\Stu_javaSE\\09_IOAndProperties\\a.txt"</span>);</span><br><span class="line"><span class="keyword">byte</span>[] bytes = <span class="string">"你好"</span>.getBytes();</span><br><span class="line"><span class="comment">//覆盖写</span></span><br><span class="line">fos.write(<span class="number">68</span>);<span class="comment">// 会查询ASCII表 =&gt; D</span></span><br><span class="line">fos.write(bytes);</span><br><span class="line">System.out.println(Arrays.toString(bytes));</span><br><span class="line">fos.close();</span><br></pre></td></tr></table></figure>
-
-<p>构造方法<code>FileOutputStream(File file,  boolean append)</code>：append 设置是否追加写，默认false不追加</p>
-<h5 id="FileInputStream-文件字节输入流"><a href="#FileInputStream-文件字节输入流" class="headerlink" title="FileInputStream 文件字节输入流"></a>FileInputStream 文件字节输入流</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream fis =<span class="keyword">new</span> FileInputStream(<span class="string">"F:\\IdeaProjects\\Stu_javaSE\\09_IOAndProperties\\a.txt"</span>);</span><br><span class="line"><span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> lens=<span class="number">0</span>;</span><br><span class="line"><span class="comment">// 读取一定数量的字节，并放在缓冲数组bytes中</span></span><br><span class="line"><span class="keyword">while</span> ((lens=fis.read(bytes))!=-<span class="number">1</span>)&#123;	<span class="comment">//如果达到文件的末尾，会返回-1</span></span><br><span class="line">    System.out.println(lens);</span><br><span class="line">    System.out.println(Arrays.toString(bytes));</span><br><span class="line">&#125;</span><br><span class="line">fis.close();</span><br></pre></td></tr></table></figure>
-
-<h3 id="字节数组流"><a href="#字节数组流" class="headerlink" title="字节数组流"></a>字节数组流</h3><h4 id="ByteArrayOutputStream-字节数组输出流"><a href="#ByteArrayOutputStream-字节数组输出流" class="headerlink" title="ByteArrayOutputStream 字节数组输出流"></a>ByteArrayOutputStream 字节数组输出流</h4><p><strong>可以捕获内存缓冲区的数据</strong>，转换成字节数组；字节数组输出流在内存中创建一个字节数组缓冲区，所有发送到输出流的数据保存在该字节数组缓冲区中</p>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>客户端请求服务器，如果服务器<strong>需要记录该用户状态</strong>，就使用response向客户端浏览器颁发一个Cookie。客户端会把Cookie保存起来；</p>
+<p>当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器可以检查该Cookie，以此来<strong>辨认用户状态</strong>。服务器还可以根据需要修改Cookie的内容；</p>
+<blockquote>
+<p>会话Cookie和持久Cookie</p>
+</blockquote>
 <ul>
-<li><p><strong>public byte[] toByteArray()</strong>：创建一个新分配的字节数组。数组的大小和当前输出流的大小，内容是当前输出流的拷贝；</p>
+<li><p>若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失，会话cookie一般不存储在硬盘上而是保存在内存里；</p>
 </li>
-<li><p><strong>public String toString()</strong>：将缓冲区的内容转换为字符串，根据平台的默认字符编码将字节转换成字符；</p>
+<li><p>若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在浏览器的不同进程间共享。这种称为持久Cookie；</p>
+</li>
+<li><p>Cookie具有不可跨域名性；</p>
 </li>
 </ul>
-<h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h3><h4 id="DataOutputStream-数据输出流"><a href="#DataOutputStream-数据输出流" class="headerlink" title="DataOutputStream 数据输出流"></a>DataOutputStream 数据输出流</h4><p>数据输出流允许应用程序以与机器无关方式将Java基本数据类型写到底层输出流</p>
-<h3 id="缓冲流-Buffered"><a href="#缓冲流-Buffered" class="headerlink" title="缓冲流 Buffered -"></a>缓冲流 Buffered -</h3><h4 id="字节缓冲流"><a href="#字节缓冲流" class="headerlink" title="字节缓冲流"></a>字节缓冲流</h4><p>使用缓冲流进行文件复制</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> s=System.currentTimeMillis();</span><br><span class="line">FileInputStream fis =<span class="keyword">new</span> FileInputStream(<span class="string">"D:\\Misc\\py2.jpg"</span>);</span><br><span class="line">FileOutputStream fos =<span class="keyword">new</span> FileOutputStream(<span class="string">"py2.jpg"</span>);</span><br><span class="line">BufferedInputStream bis =<span class="keyword">new</span> BufferedInputStream(fis);</span><br><span class="line">BufferedOutputStream bos=<span class="keyword">new</span> BufferedOutputStream(fos);</span><br><span class="line"><span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">while</span> ((len=bis.read(bytes))!=-<span class="number">1</span>)&#123;</span><br><span class="line">    bos.write(bytes);</span><br><span class="line">&#125;</span><br><span class="line">bos.close();</span><br><span class="line">bis.close();</span><br><span class="line"><span class="keyword">long</span> e=System.currentTimeMillis();</span><br><span class="line">System.out.println(<span class="string">"复制文件py2.jpg(4,499,549 字节)共耗时"</span>+(e-s)+<span class="string">"毫秒"</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="字符缓冲流"><a href="#字符缓冲流" class="headerlink" title="字符缓冲流"></a>字符缓冲流</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">BufferedWriter bw =<span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"10_IO\\text02.txt"</span>));</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    bw.write(<span class="string">"写入成功"</span>);</span><br><span class="line">    bw.newLine();</span><br><span class="line">&#125;</span><br><span class="line">bw.close();</span><br><span class="line"></span><br><span class="line">BufferedReader br =<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">"10_IO\\text02.txt"</span>));</span><br><span class="line">String line;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> ((line=br.readLine())!=<span class="keyword">null</span>)&#123;	<span class="comment">//标志位为null时退出</span></span><br><span class="line">    System.out.println(line);</span><br><span class="line">&#125;</span><br><span class="line">br.close();</span><br></pre></td></tr></table></figure>
-
-<h3 id="PrintStream-打印流"><a href="#PrintStream-打印流" class="headerlink" title="PrintStream 打印流"></a>PrintStream 打印流</h3><p>PrintStream 为其他输出流添加了功能，使它们能够方便地打印各百种数据值表示形式。它还提供其他度两项功能。与其他输出流不同，PrintStream 永远不会知抛出 IOException；而是，异常情况仅设置可通过 checkError 方法测试的内部标志。道另外，为了自动刷新，版可以创建一个 PrintStream；这意味着可在写入 byte 数组之后自动调用权 flush 方法，可调用其中一个 println 方法，或写入一个换行符或字节 (‘\n’)。</p>
-<h3 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h3><p><img src="/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/stream2.webp" alt="stream2.webp"></p>
-<h4 id="文件-File"><a href="#文件-File" class="headerlink" title="文件 File -"></a>文件 File -</h4><h5 id="FileWriter-文件字符输出流"><a href="#FileWriter-文件字符输出流" class="headerlink" title="FileWriter 文件字符输出流"></a>FileWriter 文件字符输出流</h5><p>构造方法传入 append 参数可设置是否追加写</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">"09_IOAndProperties\\b.txt"</span>);</span><br><span class="line"><span class="keyword">char</span>[] cs =&#123;<span class="string">'A'</span>,<span class="string">'D'</span>,<span class="string">'C'</span>&#125;;</span><br><span class="line"></span><br><span class="line">fw.write(cs);	<span class="comment">// 写入字符数组 char[]</span></span><br><span class="line">fw.write(<span class="number">65</span>);	<span class="comment">// 写入单个字符 int</span></span><br><span class="line">fw.write(<span class="string">"\r\n"</span>);	<span class="comment">// 写入换行符</span></span><br><span class="line">fw.write(<span class="string">"齐白石"</span>);  <span class="comment">// 写入    String</span></span><br><span class="line">fw.write(<span class="string">"我是程序员"</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">fw.flush();<span class="comment">//刷新该流的缓冲</span></span><br><span class="line">fw.close();<span class="comment">//刷新并关闭流</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="FileReader-文件字符输入流"><a href="#FileReader-文件字符输入流" class="headerlink" title="FileReader 文件字符输入流"></a>FileReader 文件字符输入流</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FileReader fr =<span class="keyword">new</span> FileReader(<span class="string">"09_IOAndProperties\\a.txt"</span>);</span><br><span class="line"><span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span>[] cs =<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">while</span> ((len=fr.read(cs))!=-<span class="number">1</span>)&#123;</span><br><span class="line">    System.out.println(<span class="keyword">new</span> String(cs,<span class="number">0</span>,len));</span><br><span class="line">&#125;</span><br><span class="line">fr.close();</span><br></pre></td></tr></table></figure>
-
-<h4 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h4><blockquote>
-<p>编码与解码</p>
-</blockquote>
-<p>按照某种规则，将字符存储到计算机中(成为二进制数)，称为<strong>编码</strong>；</p>
-<p>将存储在计算机中的二进制数按照某种规则解析显示出来，称为<strong>解码</strong>；</p>
-<p>编码：字符（能看懂的）—&gt;  字节（<strong>看不懂的</strong>）<br>解码：字节（看不懂的）—&gt;  字符（<strong>能看懂的</strong>）</p>
-<h5 id="OutputStreamWriter-输出转换流"><a href="#OutputStreamWriter-输出转换流" class="headerlink" title="OutputStreamWriter 输出转换流"></a>OutputStreamWriter 输出转换流</h5><p>编码，将字符写入硬盘</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 写入硬盘gbk编码的text</span></span><br><span class="line">OutputStreamWriter osw1 =<span class="keyword">new</span> OutputStreamWriter((<span class="keyword">new</span> FileOutputStream(<span class="string">"10_IO\\text_gbk.txt"</span>)),<span class="string">"gbk"</span>);</span><br><span class="line">osw1.write(<span class="string">"gbk国标编码写入"</span>);</span><br><span class="line">osw1.close();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写入硬盘utf编码的text</span></span><br><span class="line">OutputStreamWriter osw2 =<span class="keyword">new</span> OutputStreamWriter((<span class="keyword">new</span> FileOutputStream(<span class="string">"10_IO\\text_utf.txt"</span>)));</span><br><span class="line">osw2.write(<span class="string">"utf-8国际编码写入"</span>);</span><br><span class="line">osw2.close();</span><br></pre></td></tr></table></figure>
-
-<h5 id="InputStreamReader-输入转换流"><a href="#InputStreamReader-输入转换流" class="headerlink" title="InputStreamReader 输入转换流"></a>InputStreamReader 输入转换流</h5><p>解码，读取</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// text_gbk.txt为gbk字符集编码</span></span><br><span class="line"><span class="comment">// 要使用指定格式解码，IDE默认使用Unicode字符集解码(包含utf-8)，不然就会乱码</span></span><br><span class="line">InputStreamReader isr = <span class="keyword">new</span> InputStreamReader((<span class="keyword">new</span> FileInputStream(<span class="string">"10_IO\\text_gbk.txt"</span>)),<span class="string">"gbk"</span>);</span><br><span class="line"><span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> ((len=isr.read())!=-<span class="number">1</span>)&#123;</span><br><span class="line">	System.out.print((<span class="keyword">char</span>)len);<span class="comment">//一次打印一个字符</span></span><br><span class="line">&#125;</span><br><span class="line">isr.close();</span><br></pre></td></tr></table></figure>
-
-<h2 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2><h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p><code>ipconfig</code>：查看本机IP</p>
-<p>以太网下看到的都是局域网IP，看不到公网IP</p>
-<p>java类：InetAddress 操作ip</p>
-<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>用浏览器访问百度网站，访问的是主机的443端口 https</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano	# 查看所有的端口</span><br><span class="line">netstat -ano|<span class="built_in">findstr</span> "<span class="number">5900</span>"	# 过滤出<span class="number">5900</span>端口的进程</span><br><span class="line">tasklist|<span class="built_in">findstr</span> "<span class="number">8696</span>"	# 查看指定端口的进程</span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>用户与服务器建立连接的同时，服务器会自动为其分配一个SessionId</p>
+<p>session就是一种保存上下文信息的机制，它是针对每一个用户的,变量的值保存在服务器端，通过SessionID来区分不同的客户；</p>
+<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ul>
+<li><p>cookie数据存放在客户的浏览器上，session数据放在服务器上；</p>
+</li>
+<li><p>cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session；</p>
+</li>
+<li><p>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用cookie；</p>
+</li>
+<li><p>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie；</p>
+</li>
+<li><p>可以考虑将登陆信息等重要信息存放为session，其他信息如果需要保留，可以放在cookie中；</p>
+</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>登录网站，今输入用户名密码登录了，第二天再打开很多情况下就直接打开了。这个时候用到的一个机制就是cookie；</li>
+<li>session一个场景是购物车，添加了商品之后客户端处可以知道添加了哪些商品，而服务器端如何判别呢，所以也需要存储一些信息就用到了session；</li>
+</ul>
 
       
 
@@ -355,7 +330,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/24/session%E4%B8%8Ecookie/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -370,8 +345,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/04/21/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo博客搭建</div>
+    <a href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IO与网络编程</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -398,7 +373,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IO"><span class="toc-number">1.</span> <span class="toc-text">IO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字节流"><span class="toc-number">1.2.</span> <span class="toc-text">字节流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件流-File"><span class="toc-number">1.2.1.</span> <span class="toc-text">文件流 File -</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#FileOutputStream-文件字节输出流"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">FileOutputStream 文件字节输出流</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FileInputStream-文件字节输入流"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">FileInputStream 文件字节输入流</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字节数组流"><span class="toc-number">1.3.</span> <span class="toc-text">字节数组流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ByteArrayOutputStream-字节数组输出流"><span class="toc-number">1.3.1.</span> <span class="toc-text">ByteArrayOutputStream 字节数组输出流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据流"><span class="toc-number">1.4.</span> <span class="toc-text">数据流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DataOutputStream-数据输出流"><span class="toc-number">1.4.1.</span> <span class="toc-text">DataOutputStream 数据输出流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓冲流-Buffered"><span class="toc-number">1.5.</span> <span class="toc-text">缓冲流 Buffered -</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字节缓冲流"><span class="toc-number">1.5.1.</span> <span class="toc-text">字节缓冲流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符缓冲流"><span class="toc-number">1.5.2.</span> <span class="toc-text">字符缓冲流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PrintStream-打印流"><span class="toc-number">1.6.</span> <span class="toc-text">PrintStream 打印流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符流"><span class="toc-number">1.7.</span> <span class="toc-text">字符流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件-File"><span class="toc-number">1.7.1.</span> <span class="toc-text">文件 File -</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#FileWriter-文件字符输出流"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">FileWriter 文件字符输出流</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FileReader-文件字符输入流"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">FileReader 文件字符输入流</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转换流"><span class="toc-number">1.7.2.</span> <span class="toc-text">转换流</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#OutputStreamWriter-输出转换流"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">OutputStreamWriter 输出转换流</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#InputStreamReader-输入转换流"><span class="toc-number">1.7.2.2.</span> <span class="toc-text">InputStreamReader 输入转换流</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络编程"><span class="toc-number">2.</span> <span class="toc-text">网络编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IP"><span class="toc-number">2.1.</span> <span class="toc-text">IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#端口"><span class="toc-number">2.2.</span> <span class="toc-text">端口</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">1.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session"><span class="toc-number">2.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要区别"><span class="toc-number">3.</span> <span class="toc-text">主要区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">4.</span> <span class="toc-text">应用场景</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -513,15 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
             
             <div class="clearfix"></div>
@@ -573,27 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.baidu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://zhb520.gitlab.io" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阿波罗</a>
             </li>
           
         </ul>
@@ -604,7 +559,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">博客小站起步哈！&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
   	  	
     	</section>
     
