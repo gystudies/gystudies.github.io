@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>session与cookie | 个人博客</title>
+  <title>maven详解 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
+  <meta name="description" content="为什么要学习这个技术？  在Javaweb开发中，需要使用大量的jar包，我们手动去导入； 如何能够让一个东西自动帮我导入和配置这个jar包。由此，Maven诞生了！   Maven的高级之处在于，他会帮你导入这个JAR包所依赖的其他jar包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="session与cookie">
-<meta property="og:url" content="http://yoursite.com/2020/04/24/session%E4%B8%8Ecookie/index.html">
+<meta property="og:title" content="maven详解">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/maven%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
+<meta property="og:description" content="为什么要学习这个技术？  在Javaweb开发中，需要使用大量的jar包，我们手动去导入； 如何能够让一个东西自动帮我导入和配置这个jar包。由此，Maven诞生了！   Maven的高级之处在于，他会帮你导入这个JAR包所依赖的其他jar包">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-24T07:43:42.000Z">
-<meta property="article:modified_time" content="2020-04-24T09:37:24.506Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/30/maven%E8%AF%A6%E8%A7%A3/clip_image001.png">
+<meta property="article:published_time" content="2020-04-30T02:11:51.000Z">
+<meta property="article:modified_time" content="2020-04-30T04:22:49.016Z">
 <meta property="article:author" content="gystudies">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/30/maven%E8%AF%A6%E8%A7%A3/clip_image001.png">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -172,69 +174,50 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-session与cookie" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-maven详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      session与cookie
+      maven详解
     </h1>
   
 
         
-        <a href="/2020/04/24/session%E4%B8%8Ecookie/" class="archive-article-date">
-  	<time datetime="2020-04-24T07:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
+        <a href="/2020/04/30/maven%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-04-30T02:11:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>会话跟踪</p>
+        <p><strong>为什么要学习这个技术？</strong></p>
+<ol>
+<li>在Javaweb开发中，需要使用大量的jar包，我们手动去导入；</li>
+<li>如何能够让一个东西自动帮我导入和配置这个jar包。<br>由此，Maven诞生了！</li>
+</ol>
+<blockquote>
+<p>Maven的高级之处在于，他会帮你导入这个JAR包所依赖的其他jar包</p>
 </blockquote>
-<p><strong>会话</strong>，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。</p>
-<p>由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话；</p>
-<p>常用的<strong>会话跟踪技术</strong>是Cookie与Session：</p>
-<ul>
-<li>Cookie通过在客户端记录信息确定用户身份；</li>
-<li>Session通过在服务器端记录信息确定用户身份；</li>
-</ul>
 <a id="more"></a>
 
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>客户端请求服务器，如果服务器<strong>需要记录该用户状态</strong>，就使用response向客户端浏览器颁发一个Cookie。客户端会把Cookie保存起来；</p>
-<p>当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器可以检查该Cookie，以此来<strong>辨认用户状态</strong>。服务器还可以根据需要修改Cookie的内容；</p>
-<blockquote>
-<p>会话Cookie和持久Cookie</p>
-</blockquote>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Maven是一个<strong>构建工具</strong>,服务与构建.使用Maven配置好项目后,输入简单的命令,如:mvn clean install,Maven会帮我们处理那些繁琐的任务.</p>
 <ul>
-<li><p>若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失，会话cookie一般不存储在硬盘上而是保存在内存里；</p>
-</li>
-<li><p>若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在浏览器的不同进程间共享。这种称为持久Cookie；</p>
-</li>
-<li><p>Cookie具有不可跨域名性；</p>
-</li>
+<li>Maven是跨平台的.</li>
+<li>Maven最大化的消除了构建的重复.</li>
+<li>Maven可以帮助我们标准化构建过程.所有的项目都是简单一致的,简化了学习成本.</li>
 </ul>
-<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>用户与服务器建立连接的同时，服务器会自动为其分配一个SessionId</p>
-<p>session就是一种保存上下文信息的机制，它是针对每一个用户的,变量的值保存在服务器端，通过SessionID来区分不同的客户；</p>
-<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ul>
-<li><p>cookie数据存放在客户的浏览器上，session数据放在服务器上；</p>
-</li>
-<li><p>cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session；</p>
-</li>
-<li><p>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用cookie；</p>
-</li>
-<li><p>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie；</p>
-</li>
-<li><p>可以考虑将登陆信息等重要信息存放为session，其他信息如果需要保留，可以放在cookie中；</p>
-</li>
-</ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>登录网站，今输入用户名密码登录了，第二天再打开很多情况下就直接打开了。这个时候用到的一个机制就是cookie；</li>
-<li>session一个场景是购物车，添加了商品之后客户端处可以知道添加了哪些商品，而服务器端如何判别呢，所以也需要存储一些信息就用到了session；</li>
-</ul>
+<p>总之,Maven作为一个构建工具,不仅帮我们自动化构建,还能抽象构建过程,提供构建任务实现.他跨平台,对外提供一致的操作接口,这一切足以使他成为优秀的,流行的构建工具.<br>但是Maven不仅是构建工具,他还是一个<strong>依赖管理工具</strong>和<strong>项目信息管理工具</strong>.他还提供了<strong>中央仓库</strong>,能帮我们自动下载构件.<br>使用Maven还能享受一个额外的好处，即Maven对于项目目录结构、测试用例命名方式等内容都有既定的规则，只要遵循了这些成熟的规则，用户在项目间切换的时候就免去了额外的学习成本，可以说是<strong>约定优于配置</strong>（Convention Over Configuration）。</p>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">M2_HOME		F:\Environment\apache-maven-3.6.3\bin</span><br><span class="line">MAVEN_HOME	F:\Environment\apache-maven-3.6.3</span><br><span class="line">Path		%MAVEN_HOME%\bin</span><br><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
+
+<h3 id="阿里云镜像"><a href="#阿里云镜像" class="headerlink" title="阿里云镜像"></a>阿里云镜像</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*,!jeecg,!jeecg-snapshots<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus-aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>F:\Environment\apache-maven-3.6.3\maven-pero<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="静态资源导出"><a href="#静态资源导出" class="headerlink" title="静态资源导出"></a>静态资源导出</h3><p><img src="/2020/04/30/maven%E8%AF%A6%E8%A7%A3/clip_image001.png" alt="1" style="zoom:80%;">.</p>
 
       
 
@@ -330,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/24/session%E4%B8%8Ecookie/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/30/maven%E8%AF%A6%E8%A7%A3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -344,18 +327,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/30/http%E8%AF%A6%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          web.xml配置
+          http详解
         
       </div>
     </a>
   
   
-    <a href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">IO与网络编程</div>
+    <a href="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web.xml配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -382,7 +365,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">1.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session"><span class="toc-number">2.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要区别"><span class="toc-number">3.</span> <span class="toc-text">主要区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">4.</span> <span class="toc-text">应用场景</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置环境变量"><span class="toc-number">2.</span> <span class="toc-text">配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阿里云镜像"><span class="toc-number">3.</span> <span class="toc-text">阿里云镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地仓库"><span class="toc-number">4.</span> <span class="toc-text">本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源导出"><span class="toc-number">5.</span> <span class="toc-text">静态资源导出</span></a></li></ol>
                     </div>
                 </span>
             </div>

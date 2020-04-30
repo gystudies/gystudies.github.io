@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>session与cookie | 个人博客</title>
+  <title>web.xml配置 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
+  <meta name="description" content="面试题引入  题目：无框架下配置web.xml的主要配置内容？ 当我们用IDEA创建一个webapp项目时，往往在WEB-INF文件夹下，会生成一个web.xml文件，这个配置文件的作用，就是初始化配置信息的。  比如：Welcome页面、servlet、servlet-mapping、filter、listener、启动加载级别等。如果工程不需要上述配置时，则web.xml就不是必需的了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="session与cookie">
-<meta property="og:url" content="http://yoursite.com/2020/04/24/session%E4%B8%8Ecookie/index.html">
+<meta property="og:title" content="web.xml配置">
+<meta property="og:url" content="http://yoursite.com/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
+<meta property="og:description" content="面试题引入  题目：无框架下配置web.xml的主要配置内容？ 当我们用IDEA创建一个webapp项目时，往往在WEB-INF文件夹下，会生成一个web.xml文件，这个配置文件的作用，就是初始化配置信息的。  比如：Welcome页面、servlet、servlet-mapping、filter、listener、启动加载级别等。如果工程不需要上述配置时，则web.xml就不是必需的了。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-24T07:43:42.000Z">
-<meta property="article:modified_time" content="2020-04-24T09:37:24.506Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/image-20200429223420062.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/image-20200429223323254.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/image-20200429223558448.png">
+<meta property="article:published_time" content="2020-04-29T14:16:37.000Z">
+<meta property="article:modified_time" content="2020-04-30T04:20:57.337Z">
 <meta property="article:author" content="gystudies">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/image-20200429223420062.png">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -172,20 +176,20 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-session与cookie" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-web.xml配置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      session与cookie
+      web.xml配置
     </h1>
   
 
         
-        <a href="/2020/04/24/session%E4%B8%8Ecookie/" class="archive-article-date">
-  	<time datetime="2020-04-24T07:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
+        <a href="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-04-29T14:16:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
 </a>
         
       </header>
@@ -193,48 +197,42 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>会话跟踪</p>
+<p>面试题引入</p>
 </blockquote>
-<p><strong>会话</strong>，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。</p>
-<p>由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话；</p>
-<p>常用的<strong>会话跟踪技术</strong>是Cookie与Session：</p>
+<p><strong>题目</strong>：无框架下配置web.xml的主要配置内容？</p>
+<p>当我们用IDEA创建一个webapp项目时，往往在WEB-INF文件夹下，会生成一个web.xml文件，这个配置文件的作用，就是<strong>初始化配置信息</strong>的。</p>
 <ul>
-<li>Cookie通过在客户端记录信息确定用户身份；</li>
-<li>Session通过在服务器端记录信息确定用户身份；</li>
+<li>比如：Welcome页面、servlet、servlet-mapping、filter、listener、启动加载级别等。如果工程不需要上述配置时，则web.xml就不是必需的了。</li>
 </ul>
 <a id="more"></a>
 
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>客户端请求服务器，如果服务器<strong>需要记录该用户状态</strong>，就使用response向客户端浏览器颁发一个Cookie。客户端会把Cookie保存起来；</p>
-<p>当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器可以检查该Cookie，以此来<strong>辨认用户状态</strong>。服务器还可以根据需要修改Cookie的内容；</p>
-<blockquote>
-<p>会话Cookie和持久Cookie</p>
-</blockquote>
+<h3 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h3><h4 id="lt-web-app-gt-根元素"><a href="#lt-web-app-gt-根元素" class="headerlink" title="&lt;web-app&gt;根元素"></a><code>&lt;web-app&gt;</code>根元素</h4><p>web.xml的模式文件是由Sun公司定义的，每个web.xml文件的根元素<code>&lt;web-app&gt;</code>中，都必须标明这个web.xml使用的是哪个<strong>模式文档</strong>。其它的元素都放在<code>&lt;web-app&gt;</code>之中，<code>&lt;web-app&gt;</code>也是<strong>根节点</strong>。</p>
+<h4 id="lt-context-param-gt-上下文参数"><a href="#lt-context-param-gt-上下文参数" class="headerlink" title="&lt;context-param&gt;上下文参数"></a><code>&lt;context-param&gt;</code>上下文参数</h4><p>含有一对或多对参数名和参数值，用作应用的Servlet上下文初始化参数，参数名在整个Web应用中必须是惟一的，在web应用的整个生命周期中上下文初始化参数都存在，Servlet和jsp任何时候可以对其进行访问。</p>
+<h4 id="lt-listener-gt-监听器"><a href="#lt-listener-gt-监听器" class="headerlink" title="&lt;listener&gt;监听器"></a><code>&lt;listener&gt;</code>监听器</h4><p>Listener是Servlet的监听器，可以监听客户端的请求，服务端的操作等。<br>在application，session，request三个对象创建、销毁或者属性变动时自动执行代码的功能组件。<br>常见的listener有：ServletContextListener、ServletRequestListener、HttpSessionListener等。</p>
+<h4 id="lt-filter-gt-过滤器"><a href="#lt-filter-gt-过滤器" class="headerlink" title="&lt;filter&gt;过滤器"></a><code>&lt;filter&gt;</code>过滤器</h4><p>过滤器对web服务器管理的所有web资源：例如Jsp，Servlet，静态图片文件或静态html文件等进行拦截，从而实现一些特殊的功能。例如实现URL级别的权限访问控制、过滤敏感词汇、压缩响应信息等一些高级功能。它主要用于对用户请求进行预处理，也可以对HttpServletResponse进行后处理。</p>
+<h4 id="lt-servlet-gt"><a href="#lt-servlet-gt" class="headerlink" title="&lt;servlet&gt;"></a><code>&lt;servlet&gt;</code></h4><p>servlet是一种运行服务器端的java应用程序，具有独立于平台和协议的特性，并且可以动态的生成web页面，它工作在客户端请求与服务器响应的中间层。Servlet的主要功能在于交互式地浏览和修改数据，生成动态Web内容。<br>servlet后常跟servlet-mapping，该元素在Servlet和URL样式之间定义一个映射，即servlet类提供一个url，在地址栏输入对应的映射路径就可以访问servlet。</p>
+<h5 id="load-on-startup"><a href="#load-on-startup" class="headerlink" title="load-on-startup"></a>load-on-startup</h5><p>元素标记容器是否在启动的时候就加载这个servlet，当配置了多个servelet的时候，容器就需要读取它的值来决定加载顺序。<br>当<strong>值小于0或者没有指定</strong>时，则表示容器在<strong>该servlet被选择时才会去加载</strong>。当值为0或者大于0时，表示容器在应用启动时就加载并初始化这个servlet。<br>正数的值越小，该servlet的优先级越高，应用启动时就越先加载。所以，<code>&lt;load-on-startup&gt;x&lt;/load-on-startup&gt;</code>，中x的取值1，2，3，4，5代表的是优先级，而非启动延迟时间。</p>
+<h3 id="加载顺序"><a href="#加载顺序" class="headerlink" title="加载顺序"></a>加载顺序</h3><p>WEB容器启动时，加载过程如下：</p>
 <ul>
-<li><p>若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失，会话cookie一般不存储在硬盘上而是保存在内存里；</p>
+<li>启动一个WEB项目的时候，WEB容器会去读取它的配置文件web.xml，读取<code>&lt;listener&gt;</code>和<code>&lt;context-param&gt;</code>两个结点。</li>
+<li>然后，容器创建一个ServletContext，这个web项目的所有部分都将共享这个上下文。</li>
+<li>容器将<code>&lt;context-param&gt;</code>转换为键值对，并交给servletContext。</li>
+<li>容器创建<code>&lt;listener&gt;</code>中的类实例，创建监听器。</li>
+</ul>
+<p>首先可以肯定的是，加载顺序与它们在web.xml文件中的先后顺序无关。即不会因为filter写在listener的前面而会先加载filter。同时还存在着这样一种配置节：context-param，它用于向ServletContext提供键值对，即应用程序上下文信息。<br>web.xml的加载顺序是：<strong>context-param -&gt; listener -&gt; filter -&gt; servlet</strong> 而同个类型之间的实际程序调用的时候的顺序是根据对应的mapping的顺序进行调用的。</p>
+<h3 id="filter、listener、interceptor之间的区别"><a href="#filter、listener、interceptor之间的区别" class="headerlink" title="filter、listener、interceptor之间的区别"></a>filter、listener、interceptor之间的区别</h3><p>filter能够在一个请求到达servlet之前<strong>预处理</strong>用户请求，也可以在离开servlet时处理http响应：在执行servlet之前，首先执行filter程序，并为之做一些预处理工作；根据程序需要修改请求和响应；在servlet被调用之后截获servlet的执行listener的作用则与接口类型有关，<strong>监听器是在发生关注的事件后回调开发者提供的方法。</strong><br>interceptor 拦截器，类似于filter，不过它不在web.xml中配置，<strong>跟使用的框架有关</strong>，如果使用Spring框架则在spring容器指定的配置文件中配置；并且<strong>不是针对URL的，而是针对action</strong>，当页面提交action时，进行过滤操作。</p>
+<h3 id="URL通配符"><a href="#URL通配符" class="headerlink" title="URL通配符"></a>URL通配符</h3><p><code>/*</code>和<code>/</code>都能拦截请求；</p>
+<ul>
+<li><p><code>/</code>：会拦截所有请求，但是不会拦截文件，如<code>*.jsp</code>；能保证jsp访问正常；</p>
 </li>
-<li><p>若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在浏览器的不同进程间共享。这种称为持久Cookie；</p>
+<li><p><code>/*</code>的范围更大；拦截路径，还会拦截到<code>*.jsp</code>这些请求；一但拦截jsp页面就不能显示了；</p>
 </li>
-<li><p>Cookie具有不可跨域名性；</p>
+<li><p><code>/**</code> 是拦截所有的文件夹及里面的子文件夹，包含多级；</p>
 </li>
 </ul>
-<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>用户与服务器建立连接的同时，服务器会自动为其分配一个SessionId</p>
-<p>session就是一种保存上下文信息的机制，它是针对每一个用户的,变量的值保存在服务器端，通过SessionID来区分不同的客户；</p>
-<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ul>
-<li><p>cookie数据存放在客户的浏览器上，session数据放在服务器上；</p>
-</li>
-<li><p>cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session；</p>
-</li>
-<li><p>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用cookie；</p>
-</li>
-<li><p>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie；</p>
-</li>
-<li><p>可以考虑将登陆信息等重要信息存放为session，其他信息如果需要保留，可以放在cookie中；</p>
-</li>
-</ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>登录网站，今输入用户名密码登录了，第二天再打开很多情况下就直接打开了。这个时候用到的一个机制就是cookie；</li>
-<li>session一个场景是购物车，添加了商品之后客户端处可以知道添加了哪些商品，而服务器端如何判别呢，所以也需要存储一些信息就用到了session；</li>
-</ul>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p><img src="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/image-20200429223420062.png" alt="image-20200429223420062">.</p>
+<p><img src="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/image-20200429223323254.png" alt="image-20200429223323254">.</p>
+<p><img src="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/image-20200429223558448.png" alt="image-20200429223558448">.</p>
 
       
 
@@ -330,7 +328,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/24/session%E4%B8%8Ecookie/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -344,18 +342,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/30/maven%E8%AF%A6%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          web.xml配置
+          maven详解
         
       </div>
     </a>
   
   
-    <a href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">IO与网络编程</div>
+    <a href="/2020/04/24/session%E4%B8%8Ecookie/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">session与cookie</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -382,7 +380,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">1.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session"><span class="toc-number">2.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要区别"><span class="toc-number">3.</span> <span class="toc-text">主要区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">4.</span> <span class="toc-text">应用场景</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#元素"><span class="toc-number">1.</span> <span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-web-app-gt-根元素"><span class="toc-number">1.1.</span> <span class="toc-text">&lt;web-app&gt;根元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-context-param-gt-上下文参数"><span class="toc-number">1.2.</span> <span class="toc-text">&lt;context-param&gt;上下文参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-listener-gt-监听器"><span class="toc-number">1.3.</span> <span class="toc-text">&lt;listener&gt;监听器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-filter-gt-过滤器"><span class="toc-number">1.4.</span> <span class="toc-text">&lt;filter&gt;过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-servlet-gt"><span class="toc-number">1.5.</span> <span class="toc-text">&lt;servlet&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#load-on-startup"><span class="toc-number">1.5.1.</span> <span class="toc-text">load-on-startup</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载顺序"><span class="toc-number">2.</span> <span class="toc-text">加载顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter、listener、interceptor之间的区别"><span class="toc-number">3.</span> <span class="toc-text">filter、listener、interceptor之间的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL通配符"><span class="toc-number">4.</span> <span class="toc-text">URL通配符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子"><span class="toc-number">5.</span> <span class="toc-text">例子</span></a></li></ol>
                     </div>
                 </span>
             </div>

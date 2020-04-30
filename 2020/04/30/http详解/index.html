@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>session与cookie | 个人博客</title>
+  <title>http详解 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
+  <meta name="description" content="面试题引入  题目：当你从浏览器地址栏中输入URL回车后发生了什么？  进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；  获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；  服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥">
 <meta property="og:type" content="article">
-<meta property="og:title" content="session与cookie">
-<meta property="og:url" content="http://yoursite.com/2020/04/24/session%E4%B8%8Ecookie/index.html">
+<meta property="og:title" content="http详解">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/http%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="会话跟踪  会话，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。 由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话； 常用的会话跟踪技术是Cookie与Session：  Cookie通过在客户端记录信息确定用户身份； Session通过在服务器端记录信息确定用户身份；">
+<meta property="og:description" content="面试题引入  题目：当你从浏览器地址栏中输入URL回车后发生了什么？  进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；  获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；  服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-24T07:43:42.000Z">
-<meta property="article:modified_time" content="2020-04-24T09:37:24.506Z">
+<meta property="article:published_time" content="2020-04-30T04:17:49.000Z">
+<meta property="article:modified_time" content="2020-04-30T08:15:58.686Z">
 <meta property="article:author" content="gystudies">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -172,20 +172,20 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-session与cookie" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-http详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      session与cookie
+      http详解
     </h1>
   
 
         
-        <a href="/2020/04/24/session%E4%B8%8Ecookie/" class="archive-article-date">
-  	<time datetime="2020-04-24T07:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
+        <a href="/2020/04/30/http%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-04-30T04:17:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
 </a>
         
       </header>
@@ -193,48 +193,49 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>会话跟踪</p>
+<p>面试题引入</p>
 </blockquote>
-<p><strong>会话</strong>，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。</p>
-<p>由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话；</p>
-<p>常用的<strong>会话跟踪技术</strong>是Cookie与Session：</p>
-<ul>
-<li>Cookie通过在客户端记录信息确定用户身份；</li>
-<li>Session通过在服务器端记录信息确定用户身份；</li>
-</ul>
+<p><strong>题目</strong>：当你从浏览器地址栏中输入URL回车后发生了什么？</p>
+<ol>
+<li><p>进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；</p>
+</li>
+<li><p>获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；</p>
+</li>
+<li><p>服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥手断开TCP连接。</p>
+</li>
+</ol>
 <a id="more"></a>
 
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>客户端请求服务器，如果服务器<strong>需要记录该用户状态</strong>，就使用response向客户端浏览器颁发一个Cookie。客户端会把Cookie保存起来；</p>
-<p>当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器可以检查该Cookie，以此来<strong>辨认用户状态</strong>。服务器还可以根据需要修改Cookie的内容；</p>
-<blockquote>
-<p>会话Cookie和持久Cookie</p>
-</blockquote>
+<h3 id="背景分析"><a href="#背景分析" class="headerlink" title="背景分析"></a>背景分析</h3><p>这题考查的是面试者对整个上网概念以及背后流程的了解。而俗称的上网大致分为三个方面：</p>
+<ol>
+<li>客户端（也称用户端，较常用的就是万维网使用的网页浏览器）。</li>
+<li>网络传输层（两台计算机经过计算机网络进行的数据通信）。</li>
+<li>服务端（为客户端提供服务，提供资源，保存客户端数据的一种服务程序）。</li>
+</ol>
+<h3 id="URL解析"><a href="#URL解析" class="headerlink" title="URL解析"></a><strong>URL解析</strong></h3><p><strong>URL</strong> :(Uniform Resource Locator)统一资源定位符，用于互联网上不同资源的标示；</p>
 <ul>
-<li><p>若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失，会话cookie一般不存储在硬盘上而是保存在内存里；</p>
+<li><p>浏览器<strong>本地解析</strong>URL（一般是做格式化检查以及确认用http还是https协议，默认是http协议）；</p>
 </li>
-<li><p>若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在浏览器的不同进程间共享。这种称为持久Cookie；</p>
+<li><p>若查不到，则要请求到<strong>dns服务器</strong>查找ip；</p>
 </li>
-<li><p>Cookie具有不可跨域名性；</p>
-</li>
-</ul>
-<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>用户与服务器建立连接的同时，服务器会自动为其分配一个SessionId</p>
-<p>session就是一种保存上下文信息的机制，它是针对每一个用户的,变量的值保存在服务器端，通过SessionID来区分不同的客户；</p>
-<h3 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h3><ul>
-<li><p>cookie数据存放在客户的浏览器上，session数据放在服务器上；</p>
-</li>
-<li><p>cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session；</p>
-</li>
-<li><p>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用cookie；</p>
-</li>
-<li><p>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie；</p>
-</li>
-<li><p>可以考虑将登陆信息等重要信息存放为session，其他信息如果需要保留，可以放在cookie中；</p>
+<li><p>最后，ip返回到本地服务商的dns，本地服务商dns更新缓存。客户端成功拿到ip。（至于为啥一定要拿到ip，因为我们的tcp/ip协议很任性的只能识别ip）</p>
 </li>
 </ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>登录网站，今输入用户名密码登录了，第二天再打开很多情况下就直接打开了。这个时候用到的一个机制就是cookie；</li>
-<li>session一个场景是购物车，添加了商品之后客户端处可以知道添加了哪些商品，而服务器端如何判别呢，所以也需要存储一些信息就用到了session；</li>
-</ul>
+<h3 id="网络传输"><a href="#网络传输" class="headerlink" title="网络传输"></a>网络传输</h3><ol>
+<li>客户端拿到ip地址后，想要进行通信，先要和对方取得联系。看对方在不在，这个通常是由三次握手来实现。</li>
+</ol>
+<p>三次握手<strong>补充</strong>：客户端和服务器一共发送三个包，同步连接双方的序列号和确认号并交换 TCP） 建立tcp连接。与目标服务器建立短连接。通俗的说就是这样：</p>
+<p>​    客户端：在家么，想去你家看看你。<br>​    服务器：在呀，欢迎来玩啊。<br>​    客户端：马上到。</p>
+<ol start="2">
+<li><p>三次握手完成后，tcp和服务器之间就建立了一个<strong>可靠</strong>地虚拟通道。浏览器知道了这个消息后。就将http请求消息打包，通过tcp协议发送给了服务端。</p>
+</li>
+<li><p>服务端收到请求报文后，处理报文信息，处理完成后将数据打包返回给客户端啊。</p>
+</li>
+<li><p>通信完成后，通过四次挥手，拆除tcp连接。客户端或服务器均可主动发起挥手动作。</p>
+</li>
+<li><p>最后，客户端拿到返回数据。</p>
+</li>
+</ol>
 
       
 
@@ -330,7 +331,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/24/session%E4%B8%8Ecookie/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/04/30/http%E8%AF%A6%E8%A7%A3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -344,18 +345,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/29/web.xml%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          web.xml配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">IO与网络编程</div>
+    <a href="/2020/04/30/maven%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">maven详解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -382,7 +374,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">1.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session"><span class="toc-number">2.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要区别"><span class="toc-number">3.</span> <span class="toc-text">主要区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">4.</span> <span class="toc-text">应用场景</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景分析"><span class="toc-number">1.</span> <span class="toc-text">背景分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL解析"><span class="toc-number">2.</span> <span class="toc-text">URL解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络传输"><span class="toc-number">3.</span> <span class="toc-text">网络传输</span></a></li></ol>
                     </div>
                 </span>
             </div>
