@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>http详解 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面试题引入  题目：当你从浏览器地址栏中输入URL回车后发生了什么？  进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；  获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；  服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥">
+  <meta name="description" content="面试题引入  题目：当你从浏览器地址栏中输入URL回车后发生了什么？  进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP； 获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端； 服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥手断">
 <meta property="og:type" content="article">
 <meta property="og:title" content="http详解">
 <meta property="og:url" content="http://yoursite.com/2020/04/30/http%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="面试题引入  题目：当你从浏览器地址栏中输入URL回车后发生了什么？  进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；  获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；  服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥">
+<meta property="og:description" content="面试题引入  题目：当你从浏览器地址栏中输入URL回车后发生了什么？  进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP； 获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端； 服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥手断">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-30T04:17:49.000Z">
-<meta property="article:modified_time" content="2020-04-30T08:15:58.686Z">
+<meta property="article:modified_time" content="2020-04-30T08:38:38.897Z">
 <meta property="article:author" content="gystudies">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -197,12 +197,9 @@
 </blockquote>
 <p><strong>题目</strong>：当你从浏览器地址栏中输入URL回车后发生了什么？</p>
 <ol>
-<li><p>进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；</p>
-</li>
-<li><p>获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；</p>
-</li>
-<li><p>服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥手断开TCP连接。</p>
-</li>
+<li>进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；</li>
+<li>获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；</li>
+<li>服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥手断开TCP连接。</li>
 </ol>
 <a id="more"></a>
 
@@ -222,19 +219,11 @@
 </li>
 </ul>
 <h3 id="网络传输"><a href="#网络传输" class="headerlink" title="网络传输"></a>网络传输</h3><ol>
-<li>客户端拿到ip地址后，想要进行通信，先要和对方取得联系。看对方在不在，这个通常是由三次握手来实现。</li>
-</ol>
-<p>三次握手<strong>补充</strong>：客户端和服务器一共发送三个包，同步连接双方的序列号和确认号并交换 TCP） 建立tcp连接。与目标服务器建立短连接。通俗的说就是这样：</p>
-<p>​    客户端：在家么，想去你家看看你。<br>​    服务器：在呀，欢迎来玩啊。<br>​    客户端：马上到。</p>
-<ol start="2">
-<li><p>三次握手完成后，tcp和服务器之间就建立了一个<strong>可靠</strong>地虚拟通道。浏览器知道了这个消息后。就将http请求消息打包，通过tcp协议发送给了服务端。</p>
-</li>
-<li><p>服务端收到请求报文后，处理报文信息，处理完成后将数据打包返回给客户端啊。</p>
-</li>
-<li><p>通信完成后，通过四次挥手，拆除tcp连接。客户端或服务器均可主动发起挥手动作。</p>
-</li>
-<li><p>最后，客户端拿到返回数据。</p>
-</li>
+<li>客户端拿到ip地址后，想要进行通信，先要和对方取得联系。看对方在不在，这个通常是由三次握手来实现。<br>三次握手<strong>补充</strong>：客户端和服务器一共发送三个包，同步连接双方的序列号和确认号并交换 TCP） 建立tcp连接。与目标服务器建立短连接。通俗的说就是这样：<br>​    客户端：在家么，想去你家看看你。<br>​    服务器：在呀，欢迎来玩啊。<br>​    客户端：马上到。</li>
+<li>三次握手完成后，tcp和服务器之间就建立了一个<strong>可靠</strong>地虚拟通道。浏览器知道了这个消息后。就将http请求消息打包，通过tcp协议发送给了服务端。</li>
+<li>服务端收到请求报文后，处理报文信息，处理完成后将数据打包返回给客户端啊。</li>
+<li>通信完成后，通过四次挥手，拆除tcp连接。客户端或服务器均可主动发起挥手动作。</li>
+<li>最后，客户端拿到返回数据。</li>
 </ol>
 
       
@@ -344,6 +333,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/01/MySQL%E5%AD%A6%E4%B9%A0_%E7%B4%A2%E5%BC%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MySQL学习_索引
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/30/maven%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
@@ -489,11 +487,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>

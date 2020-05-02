@@ -251,6 +251,101 @@
 
 
   
+    <article id="post-MySQL学习_索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/01/MySQL%E5%AD%A6%E4%B9%A0_%E7%B4%A2%E5%BC%95/">MySQL学习_索引</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/01/MySQL%E5%AD%A6%E4%B9%A0_%E7%B4%A2%E5%BC%95/" class="archive-article-date">
+  	<time datetime="2020-05-01T14:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>面试题引入</p>
+</blockquote>
+<h3 id="MyISAM-和-InnoDB-区别"><a href="#MyISAM-和-InnoDB-区别" class="headerlink" title="MyISAM 和 InnoDB 区别"></a>MyISAM 和 InnoDB 区别</h3><blockquote>
+<p>存储结构</p>
+</blockquote>
+<p>MyISAM属于堆表，每个文件名以表名开头，扩展名指出文件类型；</p>
+<ul>
+<li><p>.frm <strong>表结构文件</strong>，用于存储表的定义</p>
+</li>
+<li><p>.MYD <strong>数据文件</strong>，用于存放数据</p>
+</li>
+<li><p>.MYI <strong>索引文件</strong>，用于存放表索引</p>
+</li>
+</ul>
+<p>InnoDB属于索引组织表，有两种存储方式，<strong>共享表空间存储</strong>和<strong>多表空间存储</strong>；</p>
+<ul>
+<li><code>.frm</code>：表结构文件</li>
+<li><code>.ibd</code>：每个表都有一个表空间文件用于存储每个表的<strong>数据和索引</strong>，文件名以表名开头</li>
+</ul>
+        
+          <a class="article-more-a" href="/2020/05/01/MySQL%E5%AD%A6%E4%B9%A0_%E7%B4%A2%E5%BC%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/01/MySQL%E5%AD%A6%E4%B9%A0_%E7%B4%A2%E5%BC%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-http详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -276,12 +371,9 @@
 </blockquote>
 <p><strong>题目</strong>：当你从浏览器地址栏中输入URL回车后发生了什么？</p>
 <ol>
-<li><p>进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；</p>
-</li>
-<li><p>获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；</p>
-</li>
-<li><p>服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥手断开TCP连接。</p>
-</li>
+<li>进行域名解析，先进行本地解析，如果本地没有，再查找DNS服务器获得对应IP；</li>
+<li>获得IP地址后，想要进行通信，要进行三次握手，确认对方在不在，三次握手完成了，就建立了可靠的连接，浏览器知道了，就将http请求信息打包，通过tcp协议发送给服务端；</li>
+<li>服务器收到请求报文后，会将需要的数据打包响应给客户端，通信完成后，通过四次挥手断开TCP连接。</li>
 </ol>
         
           <a class="article-more-a" href="/2020/04/30/http%E8%AF%A6%E8%A7%A3/#more">more >></a>
@@ -764,11 +856,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
