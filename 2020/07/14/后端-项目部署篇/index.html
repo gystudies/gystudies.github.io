@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>个人博客</title>
+  <title>关于项目的部署 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="关于项目的部署 part1 软件安装部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于项目的部署">
+<meta property="og:url" content="http://yoursite.com/2020/07/14/%E5%90%8E%E7%AB%AF-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AF%87/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="关于项目的部署 part1 软件安装部分">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-14T14:43:32.000Z">
+<meta property="article:modified_time" content="2020-07-14T14:43:53.932Z">
 <meta property="article:author" content="gystudies">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
@@ -167,42 +172,158 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-session与cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-后端-项目部署篇" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/24/session%E4%B8%8Ecookie/">session与cookie</a>
+    <h1 class="article-title" itemprop="name">
+      关于项目的部署
     </h1>
   
 
         
-        <a href="/2020/04/24/session%E4%B8%8Ecookie/" class="archive-article-date">
-  	<time datetime="2020-04-24T07:43:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
+        <a href="/2020/07/14/%E5%90%8E%E7%AB%AF-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AF%87/" class="archive-article-date">
+  	<time datetime="2020-07-14T14:43:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>会话跟踪</p>
+        <h3 id="关于项目的部署"><a href="#关于项目的部署" class="headerlink" title="关于项目的部署"></a>关于项目的部署</h3><blockquote>
+<p>part1 软件安装部分</p>
 </blockquote>
-<p><strong>会话</strong>，指用户登录网站后的一系列动作，比如浏览商品，添加到购物车并购买。</p>
-<p>由于HTTP是一种无状态的协议，服务器单从网络连接上无从知道客户身份，所以需要跟踪会话；</p>
-<p>常用的<strong>会话跟踪技术</strong>是Cookie与Session：</p>
+<a id="more"></a>
+
+<h4 id="1-jdk-安装"><a href="#1-jdk-安装" class="headerlink" title="1. jdk 安装"></a>1. jdk 安装</h4><p>以 jdk1.8 为例</p>
+<p>1、选择合适的安装路径，一路next…</p>
+<p>2、配置环境变量(敲黑板)</p>
 <ul>
-<li>Cookie通过在客户端记录信息确定用户身份；</li>
-<li>Session通过在服务器端记录信息确定用户身份；</li>
+<li>打开环境变量窗口，配置系统变量</li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/04/24/session%E4%B8%8Ecookie/#more">more >></a>
-        
+<table>
+<thead>
+<tr>
+<th>系统变量</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JAVA_HOME</td>
+<td>D:\DWebp\jdk1.8.0_144</td>
+</tr>
+<tr>
+<td>CLASSPATH</td>
+<td>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</td>
+</tr>
+</tbody></table>
+<ul>
+<li>打开系统变量中的变量<strong>Path</strong>，编辑追加</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%JAVA_HOME%\bin</td>
+</tr>
+<tr>
+<td>%JAVA_HOME%\jre\bin</td>
+</tr>
+</tbody></table>
+<ul>
+<li>cmd中输入<code>java -version</code>查看版本</li>
+</ul>
+<h4 id="2-Tomcat-安装"><a href="#2-Tomcat-安装" class="headerlink" title="2. Tomcat 安装"></a>2. Tomcat 安装</h4><p>以 Tomcat8.5 官方下载即可，绿色免安装</p>
+<p>1、创建系统变量</p>
+<table>
+<thead>
+<tr>
+<th>系统变量</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CATALINA_HOME</td>
+<td>F:\Environment\apache-tomcat-8.5.56</td>
+</tr>
+<tr>
+<td>CATALINA_BASE *</td>
+<td>F:\Environment\apache-tomcat-8.5.56</td>
+</tr>
+</tbody></table>
+<p>2、在 CLASSPATH 中追加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以 .; 开头</span></span><br><span class="line">%CATALINA_HOME%\lib\servlet-api.jar;</span><br></pre></td></tr></table></figure>
+
+<p>3、在 Path 中追加</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%CATALINA_HOME%\bin</td>
+</tr>
+<tr>
+<td>%CATALINA_HOME%\lib *</td>
+</tr>
+</tbody></table>
+<h4 id="3-MySQL-安装"><a href="#3-MySQL-安装" class="headerlink" title="3. MySQL 安装"></a>3. MySQL 安装</h4><p>以 mysql5.7为例，免安装版</p>
+<p>1、配置环境变量</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F:\Application\mysql-5.7.19\bin</td>
+</tr>
+</tbody></table>
+<p>2、在根目录创建配置文件 my.ini</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 设置为自己MYSQL的安装目录</span></span><br><span class="line"><span class="attr">basedir</span>=F:\Application\mysql-<span class="number">5.7</span>.<span class="number">19</span>\</span><br><span class="line"><span class="comment"># 设置为MYSQL的数据目录</span></span><br><span class="line"><span class="attr">datadir</span>=F:\Application\mysql-<span class="number">5.7</span>.<span class="number">19</span>\data\</span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="attr">character_set_server</span>=utf8</span><br><span class="line"><span class="attr">sql_mode</span>=NO_ENGINE_SUBSTITUTION,NO_AUTO_CREATE_USER</span><br><span class="line"><span class="comment"># 开启查询缓存</span></span><br><span class="line"><span class="attr">explicit_defaults_for_timestamp</span>=<span class="literal">true</span></span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
+
+<p>3、安装服务，必须以管理员身份cmd</p>
+<ul>
+<li>进入mysql的bin目录后<code>mysqld install</code></li>
+<li><code>mysqld --initialize-insecure --user=mysql</code>生成data文件夹</li>
+<li><code>net start mysql</code>启动服务，停止服务是<code>net stop mysql</code></li>
+</ul>
+<p>下一步是修改密码，在此之前要跳过登录 skip-grant-tables</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> mysql.user <span class="keyword">SET</span> authentication_string = <span class="keyword">PASSWORD</span>(<span class="string">'123456'</span>) <span class="keyword">WHERE</span> <span class="keyword">user</span> = <span class="string">'root'</span>;</span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>; <span class="comment">--刷新</span></span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢大佬的打赏<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/aipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -222,16 +343,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/24/session%E4%B8%8Ecookie/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://gystudies.github.io/2020/07/14/%E5%90%8E%E7%AB%AF-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%AF%87/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/13/class%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Class生命周期</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -246,96 +426,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-IO与网络编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">IO与网络编程</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-04-22T07:47:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>面试题引入</p>
-</blockquote>
-<p><strong>题目</strong>：使用递归算法输出某个目录下及其子目录下所有文件？</p>
-        
-          <a class="article-more-a" href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/22/IO%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于项目的部署"><span class="toc-number">1.</span> <span class="toc-text">关于项目的部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-jdk-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1. jdk 安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Tomcat-安装"><span class="toc-number">1.2.</span> <span class="toc-text">2. Tomcat 安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MySQL-安装"><span class="toc-number">1.3.</span> <span class="toc-text">3. MySQL 安装</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+
   
 
 
@@ -361,8 +477,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
